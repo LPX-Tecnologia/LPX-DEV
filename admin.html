@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Desenvolvedor – LPX Dev</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo.svg" alt="LPX Dev" class="logo-img">
+                <span class="ms-2">Painel do Desenvolvedor</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <h2 class="mb-4">Pedidos de Serviço</h2>
+
+        <!-- LOGIN -->
+        <div id="loginArea" class="card p-4 mb-4">
+            <h4>Login</h4>
+            <div class="mb-3">
+                <label class="form-label">Senha</label>
+                <input type="password" id="senhaAdmin" class="form-control">
+            </div>
+            <button class="btn btn-custom" onclick="fazerLogin()">Entrar</button>
+            <p class="text-danger mt-2" id="loginErro"></p>
+        </div>
+
+        <!-- PAINEL (oculto até login) -->
+        <div id="painelArea" class="d-none">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <i class="fas fa-list"></i> Pedidos Pendentes (pagos)
+                </div>
+                <div class="card-body">
+                    <div id="listaPedidos" class="table-responsive">
+                        <!-- Preenchido via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
