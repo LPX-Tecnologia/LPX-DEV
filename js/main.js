@@ -1,5 +1,4 @@
-<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-<script type="text/javascript">
+
     aclib.runAutoTag({
         zoneId: 'dc5kyonaoi',
     });
