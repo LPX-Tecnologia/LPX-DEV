@@ -3,26 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LPX Dev – Desenvolvimento de Sistemas e Sites</title>
+
+    <!-- SEO / Meta Tags -->
+    <title>LPX Dev – Desenvolvimento de Sistemas e Sites | Orçamento Rápido</title>
+    <meta name="description" content="Criação de sites, sistemas web e aplicativos mobile. Orçamento via chatbot e pagamento com PIX. Transforme sua ideia em um produto digital profissional.">
+    <meta name="keywords" content="desenvolvimento de sistemas, criação de sites, aplicativos mobile, orçamento online, chatbot, PIX">
+    <meta name="author" content="LPX Dev">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lpxdev.com.br/">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="LPX Dev – Desenvolvimento de Sistemas e Sites">
+    <meta property="og:description" content="Soluções digitais sob medida com orçamento rápido via chatbot e pagamento PIX.">
+    <meta property="og:image" content="https://lpxdev.com.br/assets/og-image.jpg">
+    <meta property="og:url" content="https://lpxdev.com.br/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon (placeholder) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+
+    <!-- Script de Anúncio (fornecido) -->
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js" async></script>
+    <script type="text/javascript">
+        aclib.runAutoTag({
+            zoneId: 'gzqfvcq4nt',
+        });
+    </script>
+
+    <!-- Bibliotecas CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Principal (externo) -->
     <link rel="stylesheet" href="css/style.css">
-    
+
+    <!-- Melhorias de estilo inline para complementar -->
+    <style>
+        /* Ajustes adicionais para melhorar o design */
+        .hero {
+            background: linear-gradient(135deg, #0b1a2e 0%, #1a2f45 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(to top, rgba(11,26,46,0.9), transparent);
+        }
+        .text-highlight {
+            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .service-card, .testimonial-card, .portfolio-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .service-card:hover, .testimonial-card:hover, .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+            border-radius: 4px;
+        }
+        .btn-custom {
+            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,210,255,0.4);
+            color: #fff;
+        }
+        .btn-outline-light {
+            border-radius: 50px;
+        }
+        .navbar {
+            background: rgba(11,26,46,0.9) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+        .logo-footer {
+            height: 40px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+        .chatbot-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1050;
+        }
+        .chatbot-toggle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+            border: none;
+            color: #fff;
+            font-size: 30px;
+            box-shadow: 0 10px 30px rgba(0,210,255,0.5);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+        }
+        .chatbot-container {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 380px;
+            max-height: 500px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .chatbot-header {
+            background: linear-gradient(135deg, #0b1a2e, #1a2f45);
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chatbot-header h5 {
+            margin: 0;
+            font-weight: 600;
+        }
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 350px;
+            background: #f8f9fa;
+        }
+        .chatbot-input-area {
+            padding: 15px;
+            background: #fff;
+            border-top: 1px solid #dee2e6;
+        }
+        .chatbot-input-area .form-control {
+            border-radius: 30px;
+            padding: 10px 20px;
+        }
+        .chatbot-input-area .btn {
+            border-radius: 30px;
+            padding: 10px 20px;
+        }
+        .testimonial-card i.fa-star {
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        .footer-social a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 22px;
+            transition: all 0.3s ease;
+        }
+        .footer-social a:hover {
+            color: #00d2ff;
+            transform: translateY(-3px);
+        }
+        @media (max-width: 576px) {
+            .chatbot-container {
+                width: 300px;
+                right: -20px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+        /* Botão flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            z-index: 1040;
+            background: #25d366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(37,211,102,0.4);
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-
-    
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/logo.svg" alt="LPX Dev" class="logo-img animate__animated animate__pulse animate__infinite">
+                <img src="assets/logo.svg" alt="LPX Dev - Logo" class="logo-img animate__animated animate__pulse animate__infinite">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -41,7 +264,7 @@
 
     <!-- HERO -->
     <header class="hero d-flex align-items-center" id="inicio">
-        <div class="container text-center text-white">
+        <div class="container text-center text-white position-relative" style="z-index: 2;">
             <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">Desenvolvimento de <span class="text-highlight">Sistemas e Sites</span></h1>
             <p class="lead mt-3 animate__animated animate__fadeInUp animate__delay-1s">Transforme sua ideia em um sistema profissional, com orçamento rápido via chatbot e pagamento PIX.</p>
             <div class="mt-4 animate__animated animate__fadeInUp animate__delay-2s">
@@ -61,7 +284,7 @@
                         <div class="card-body text-center">
                             <i class="fas fa-globe fa-3x text-primary mb-3"></i>
                             <h5>Site Institucional</h5>
-                            <p>Criação de sites modernos e responsivos.</p>
+                            <p>Criação de sites modernos, responsivos e otimizados para SEO, com design exclusivo e foco na conversão.</p>
                             <strong>A partir de R$ 800</strong>
                         </div>
                     </div>
@@ -71,7 +294,7 @@
                         <div class="card-body text-center">
                             <i class="fas fa-code fa-3x text-primary mb-3"></i>
                             <h5>Sistema Web</h5>
-                            <p>Sistemas completos com painel administrativo.</p>
+                            <p>Sistemas completos com painel administrativo, banco de dados, integrações e todas as funcionalidades que sua empresa precisa.</p>
                             <strong>A partir de R$ 2.000</strong>
                         </div>
                     </div>
@@ -81,10 +304,34 @@
                         <div class="card-body text-center">
                             <i class="fas fa-mobile-alt fa-3x text-primary mb-3"></i>
                             <h5>Aplicativo Mobile</h5>
-                            <p>Apps para Android e iOS com design moderno.</p>
+                            <p>Apps nativos para Android e iOS, com design intuitivo, performance e experiências personalizadas para seus usuários.</p>
                             <strong>A partir de R$ 3.500</strong>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Diferenciais -->
+            <div class="row mt-5 g-4" data-aos="fade-up">
+                <div class="col-md-3 col-6 text-center">
+                    <i class="fas fa-clock fa-2x text-primary"></i>
+                    <p class="mt-2 fw-bold">Entrega Ágil</p>
+                    <small>Projetos entregues no prazo</small>
+                </div>
+                <div class="col-md-3 col-6 text-center">
+                    <i class="fas fa-shield-alt fa-2x text-primary"></i>
+                    <p class="mt-2 fw-bold">Segurança</p>
+                    <small>Código e dados protegidos</small>
+                </div>
+                <div class="col-md-3 col-6 text-center">
+                    <i class="fas fa-headset fa-2x text-primary"></i>
+                    <p class="mt-2 fw-bold">Suporte 24/7</p>
+                    <small>Assistência contínua</small>
+                </div>
+                <div class="col-md-3 col-6 text-center">
+                    <i class="fas fa-pix fa-2x text-primary"></i>
+                    <p class="mt-2 fw-bold">Pagamento PIX</p>
+                    <small>Rápido e sem taxas</small>
                 </div>
             </div>
         </div>
@@ -99,69 +346,72 @@
                     <div class="p-4">
                         <i class="fas fa-comments fa-3x text-primary"></i>
                         <h5>1. Converse com o Chatbot</h5>
-                        <p>Conte sua ideia e tire dúvidas.</p>
+                        <p>Conte sua ideia e tire dúvidas em poucos minutos.</p>
                     </div>
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
                     <div class="p-4">
                         <i class="fas fa-file-invoice fa-3x text-primary"></i>
                         <h5>2. Receba o Orçamento</h5>
-                        <p>O sistema calcula o valor na hora.</p>
+                        <p>O sistema calcula o valor na hora, de forma transparente.</p>
                     </div>
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
                     <div class="p-4">
                         <i class="fas fa-qrcode fa-3x text-primary"></i>
                         <h5>3. Pague com PIX</h5>
-                        <p>Pagamento rápido e seguro.</p>
+                        <p>Pagamento rápido, seguro e sem burocracia.</p>
                     </div>
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
                     <div class="p-4">
                         <i class="fas fa-laptop-code fa-3x text-primary"></i>
                         <h5>4. Acompanhe a Criação</h5>
-                        <p>Desenvolvo seu sistema e entrego pronto.</p>
+                        <p>Desenvolvo seu sistema e entrego pronto para uso.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- PORTFÓLIO -->
-<section class="py-5 bg-light" id="portfolio">
-    <div class="container">
-        <h2 class="section-title text-center mb-5" data-aos="fade-up">Projetos Recentes</h2>
-        <div class="row g-4">
-            <div class="col-md-4" data-aos="zoom-in">
-                <div class="card portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=250&fit=crop&q=80" class="card-img-top" alt="E-commerce de Roupas">
-                    <div class="card-body">
-                        <h5>E-commerce de Roupas</h5>
-                        <p>Loja virtual completa com carrinho e pagamento.</p>
+    <!-- PORTFÓLIO -->
+    <section class="py-5 bg-light" id="portfolio">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Projetos Recentes</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="card portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=250&fit=crop&q=80" class="card-img-top" alt="E-commerce de Roupas - projeto de loja virtual">
+                        <div class="card-body">
+                            <h5>E-commerce de Roupas</h5>
+                            <p>Loja virtual completa com carrinho, integração com gateways de pagamento e painel administrativo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=400&h=250&fit=crop&q=80" class="card-img-top" alt="Sistema de Agendamento para clínicas">
+                        <div class="card-body">
+                            <h5>Sistema de Agendamento</h5>
+                            <p>Plataforma para clínicas e consultórios com gestão de horários, notificações automáticas e prontuário.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card portfolio-card">
+                        <img src="https://images.unsplash.com/photo-1526367790999-0150786686a2?w=400&h=250&fit=crop&q=80" class="card-img-top" alt="App de Delivery para restaurantes">
+                        <div class="card-body">
+                            <h5>App de Delivery</h5>
+                            <p>Aplicativo mobile para restaurantes, com cardápio digital, rastreamento em tempo real e avaliações.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                <div class="card portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=400&h=250&fit=crop&q=80" class="card-img-top" alt="Sistema de Agendamento">
-                    <div class="card-body">
-                        <h5>Sistema de Agendamento</h5>
-                        <p>Plataforma para clínicas e consultórios.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                <div class="card portfolio-card">
-                    <img src="https://images.unsplash.com/photo-1526367790999-0150786686a2?w=400&h=250&fit=crop&q=80" class="card-img-top" alt="App de Delivery">
-                    <div class="card-body">
-                        <h5>App de Delivery</h5>
-                        <p>Aplicativo mobile para restaurantes.</p>
-                    </div>
-                </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-custom">Ver todos os projetos</a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- DEPOIMENTOS -->
     <section class="py-5">
@@ -170,26 +420,75 @@
             <div class="row g-4">
                 <div class="col-md-4" data-aos="fade-up">
                     <div class="card testimonial-card p-4 h-100">
-                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
-                        <p class="mt-3">"O sistema ficou perfeito! Atendimento rápido e profissional."</p>
-                        <h6>Carlos Eduardo</h6>
-                        <small>Loja Online</small>
+                        <div class="d-flex text-warning mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="mt-2">"O sistema ficou perfeito! Atendimento rápido e profissional. Superou minhas expectativas."</p>
+                        <h6 class="mt-auto">Carlos Eduardo</h6>
+                        <small class="text-muted">Loja Online</small>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card testimonial-card p-4 h-100">
-                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
-                        <p class="mt-3">"Recomendo demais! Meu site ficou lindo e funcional."</p>
-                        <h6>Fernanda Lima</h6>
-                        <small>Consultório</small>
+                        <div class="d-flex text-warning mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="mt-2">"Recomendo demais! Meu site ficou lindo e funcional. O suporte pós-entrega é excelente."</p>
+                        <h6 class="mt-auto">Fernanda Lima</h6>
+                        <small class="text-muted">Consultório</small>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card testimonial-card p-4 h-100">
-                        <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
-                        <p class="mt-3">"Processo simples, pagamento fácil e entrega no prazo."</p>
-                        <h6>Ricardo Almeida</h6>
-                        <small>Restaurante</small>
+                        <div class="d-flex text-warning mb-2">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="mt-2">"Processo simples, pagamento fácil e entrega no prazo. Uma parceria de confiança."</p>
+                        <h6 class="mt-auto">Ricardo Almeida</h6>
+                        <small class="text-muted">Restaurante</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ / Dúvidas Frequentes (simples) -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up">Dúvidas Frequentes</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Qual o prazo para entrega de um site?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">O prazo varia conforme a complexidade, mas geralmente sites institucionais ficam prontos em 2 a 4 semanas. Sistemas web e apps podem levar de 4 a 8 semanas. Você acompanha todo o processo.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Como funciona o pagamento com PIX?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Após aprovação do orçamento, você recebe um QR Code ou chave PIX para pagamento. A confirmação é imediata e iniciamos o desenvolvimento.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Vocês oferecem suporte após a entrega?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Sim! Oferecemos 30 dias de suporte gratuito após a entrega. Planos de manutenção contínua também estão disponíveis.</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -199,23 +498,34 @@
     <!-- FOOTER -->
     <footer class="bg-dark text-white pt-4 pb-2">
         <div class="container text-center">
-            <img src="assets/logo.svg" alt="LPX Dev" class="logo-footer mb-3">
-            <p>Desenvolvimento de sistemas, sites e aplicativos com qualidade.</p>
-            <p><i class="fab fa-whatsapp"></i> (47) 99242-2674</p>
-            <p><i class="fas fa-envelope"></i> lpxdev@gmail.com</p>
-            <p class="mb-0">© 2025 LPX Dev. Todos os direitos reservados.</p>
+            <img src="assets/logo.svg" alt="LPX Dev - Logo rodapé" class="logo-footer mb-3">
+            <p class="mb-1">Desenvolvimento de sistemas, sites e aplicativos com qualidade e inovação.</p>
+            <div class="footer-social my-3">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5547992422674" class="text-white text-decoration-none">(47) 99242-2674</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:lpxdev@gmail.com" class="text-white text-decoration-none">lpxdev@gmail.com</a></p>
+            <p class="mb-0 small">&copy; 2025 LPX Dev. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <!-- Botão flutuante do WhatsApp -->
+    <a href="https://wa.me/5547992422674" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- CHATBOT WIDGET -->
     <div id="chatbot-widget" class="chatbot-widget">
-        <button id="chatbot-toggle" class="chatbot-toggle" onclick="toggleChatbot()">
+        <button id="chatbot-toggle" class="chatbot-toggle" onclick="toggleChatbot()" aria-label="Abrir assistente virtual">
             <i class="fas fa-robot"></i>
         </button>
         <div id="chatbot-container" class="chatbot-container d-none">
             <div class="chatbot-header">
-                <h5><i class="fas fa-robot"></i> Assistente LPX Dev</h5>
-                <button class="btn-close" onclick="toggleChatbot()"></button>
+                <h5><i class="fas fa-robot me-2"></i> Assistente LPX Dev</h5>
+                <button class="btn-close btn-close-white" onclick="toggleChatbot()" aria-label="Fechar"></button>
             </div>
             <div id="chatbot-messages" class="chatbot-messages"></div>
             <div id="chatbot-input-area" class="chatbot-input-area">
@@ -227,7 +537,40 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializa AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
     <script src="js/main.js"></script>
     <script src="js/chatbot.js"></script>
+
+    <!-- Pequeno script para garantir que o chatbot funcione -->
+    <script>
+        function toggleChatbot() {
+            const container = document.getElementById('chatbot-container');
+            container.classList.toggle('d-none');
+            if (!container.classList.contains('d-none')) {
+                // Inicializa mensagem se vazio
+                const messages = document.getElementById('chatbot-messages');
+                if (messages.children.length === 0) {
+                    const msg = document.createElement('div');
+                    msg.className = 'chatbot-message bot';
+                    msg.innerHTML = 'Olá! Sou o assistente da LPX Dev. Como posso ajudá-lo hoje?';
+                    messages.appendChild(msg);
+                }
+            }
+        }
+
+        function abrirChatbot() {
+            const container = document.getElementById('chatbot-container');
+            if (container.classList.contains('d-none')) {
+                toggleChatbot();
+            }
+        }
+    </script>
 </body>
 </html>
